@@ -7,13 +7,41 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- 問題番号 -->
     <TextView
+        android:id="@+id/countLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/count_label"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/questionLabel"/>
+
+    <!-- クイズの問題 -->
+    <TextView
+        android:id="@+id/questionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/question_label"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/countLabel"
+        app:layout_constraintBottom_toTopOf="@id/inputAnswer"/>
+    
+    <EditText
+        android:id="@+id/inputAnswer"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:hint="@string/hint"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="@color/brown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionLabel"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

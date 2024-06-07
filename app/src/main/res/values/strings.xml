@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">pi12a_kadai04_05</string>
+
+    <!-- クイズ画面 -->
+    <string name="question_label">問題</string>
+    <string name="count_label">第%d問</string>
+    <string name="hint">答えを入力してください</string>
 </resources>
