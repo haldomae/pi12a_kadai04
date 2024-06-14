@@ -1,6 +1,7 @@
 package com.hal_domae.pi12a_kadai04_05
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,19 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        binding.inputAnswer.setOnKeyListener { _, keyCode, event ->
+            // event.action == KeyEvent.ACTION_DOWNはキーが押された時の処理
+            // keyCode == KeyEvent.KEYCODE_ENTERはエンターキーが押された時の処理
+            if(event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER){
+                checkAnswer()
+
+                // trueを返すと他のキーイベントが発生しなくなる
+                true
+            } else {
+                // falseを返すと返すと他のリスナーやシステムのキーイベント処理が続行される
+                false
+            }
         }
         showNextQuiz()
 
